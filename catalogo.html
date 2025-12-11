@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varamount+</title>
+  <link rel="icon" href="IMG/logo.png" type="image/x-icon" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    .navbar img { height: 40px; }
+    .navbar ul { list-style: none; display: flex; gap: 25px; }
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .navbar ul li a:hover { color: #00a8ff; }
+
+    .hero {
+      background: url('IMG/transforme.jpg') center/cover no-repeat;
+      height: 1080px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 60px;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+    }
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+    .hero-content p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    .section {
+      padding: 40px 20px;
+    }
+    .section h2 {
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+    .movies-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .poster {
+      width: 200px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .poster:hover {
+      transform: scale(1.08);
+    }
+
+    .movie {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .movie img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .movie:hover img {
+      transform: scale(1.08);
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      font-size: 0.9em;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .movie:hover .overlay-text {
+      opacity: 1;
+    }
+
+    .btn-roxo {
+  display: inline-block;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: 0.3s;
+}
+
+.btn-roxo:hover {
+  background-color: rgb(255, 255, 255);
+  transform: scale(1.05);
+  font: optional;
+  color: #000000;
+}
+  </style>
+</head>
+<body>
+  <header class="navbar"> 
+    <img src="IMG/logo.png" alt="Varamount+">
+    <ul>
+      <li><a href="catalogo.html">Início</a></li>
+      <li><a href="filmes.html">Filmes</a></li>
+      <li><a href="serie.html">Séries</a></li>
+    </ul>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transformers</h1>
+      <p>Os Transformers são alienígenas gigantes que vivem na Terra camuflados sob a forma de carros, aviões e aparelhos eletrônicos —, batalham por uma fonte de energia escondida em nosso planeta: são os cruéis Decepticons, determinados a dominar o Universo, contra os pacíficos Autobots. Enquanto isso, os adolescentes Sam e Mikaela vivem tranquilamente sua vida sem saber que a fonte tão cobiçada pelos alienígenas está com eles.</p>
+      <a href="#" class="btn-roxo">Assistir agora</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Populares no Varamount+</h2>
+    <div class="movies-row">
+
+      <div class="movie">
+        <img src="IMG/shrek.jpg" alt="Shrek">
+        <div class="overlay-text">Shrek é um ogro que vive em um pântano e embarca em uma jornada inesperada.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/sonic.jpg" alt="Sonic">
+        <div class="overlay-text">O ouriço azul mais veloz em aventuras eletrizantes.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/parque.jpg" alt="Parque dos Sonhos">
+        <div class="overlay-text">A imaginação ganha vida em um parque mágico.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/bob.jpg" alt="Bob Esponja">
+        <div class="overlay-text">Gary desaparece de repente, mas Bob Esponja e Patrick embarcam em uma missão frenética.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/Halo.jpg" alt="Halo">
+        <div class="overlay-text">Ação e guerra futurista contra ameaças alienígenas.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/southparktítulo.jpg" alt="South Park">
+        <div class="overlay-text">Humor politicamente incorreto em uma cidade cheia de caos.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/icarlotítulo.jpg" alt="iCarly">
+        <div class="overlay-text">Uma garota e seus amigos comandam um programa na internet.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/coringa.jpg" alt="Coringa">
+        <div class="overlay-text">O caos retorna em um musical sombrio.</div>
+      </div>
+   <div class="movie">
+        <img src="IMG/h8.jpg" alt="Smile">
+        <div class="overlay-text">Após um paciente cometer um suicídio brutal em sua frente, a psiquiatra Rose é perseguida por uma entidade maligna que muda de forma<div>
+      </div>
+
+
+    </div>
+  </section>
+<section class="section">
+    <h2>Séries em alta</h2>
+    <div class="movies-row">
+
+      <div class="movie">
+        <img src="IMG/sopranos.jpg" alt="Sopranos">
+        <div class="overlay-text">Tony Soprano tenta equilibrar a vida de mafioso e pai de família.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/julius.jpg" alt="Todo Mundo Odeia o Chris">
+        <div class="overlay-text">Chris enfrenta os desafios da adolescência com muito humor.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/bre.jpg" alt="Prison break">
+        <div class="overlay-text">Michael Scofield elabora um plano para salvar o irmão da morte.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/oruso.jpg" alt="O Urso">
+        <div class="overlay-text">Um chef luta para manter o restaurante da família em Chicago.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/morte.jpg" alt="Até a Morte">
+        <div class="overlay-text">Uma mulher acorda algemada ao marido morto e precisa sobreviver.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/simpsons.webp" alt="Simpsons">
+        <div class="overlay-text">A icônica sátira americana sobre a família Simpson.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/last.jpg" alt="The Last of Us">
+        <div class="overlay-text">Joel e Ellie enfrentam um mundo destruído por um fungo mortal.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/tedlasso.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Um técnico americano lidera um time de futebol inglês.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/la.jpg" alt="La casa de papel">
+                <div class="overlay-text">Oito ladrões se trancam com reféns na Casa da Moeda da Espanha. Seu líder manipula a polícia para realizar um plano que pode ser o maior roubo da história ou uma missão em vão.
+</div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Mais assistidos</h2>
+    <div class="movies-row">
+      <div class="movie">
+        <img src="IMG/v1.jpg" alt="Batman">
+        <div class="overlay-text">Batman enfrenta uma batalha mortal pra proteger Gotham do Coringa.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/v2.jpg" alt="Titanic">
+        <div class="overlay-text">Um artista pobre e uma jovem rica se apaixonam na fatídica viagem do Titanic.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/v3.jpg" alt="Kill Bill">
+        <div class="overlay-text">Uma ex-assassina acorda de um coma e busca vingança contra seu antigo chefe.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/v4.jpg" alt="Star Wars">
+        <div class="overlay-text">A queda de Darth Vader levou ao surgimento da Primeira Ordem.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/v5.jpg" alt="Um Sonho de Liberdade">
+        <div class="overlay-text">Homem luta para manter a esperança viva dentro da prisão.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/v6.jpg" alt="Avatar">
+        <div class="overlay-text">Na Terra devastada, humanos exploram Pandora em busca de recursos.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/v7.jpg" alt="Space Jam">
+        <div class="overlay-text">LeBron James e os Looney Tunes enfrentam o Goon Squad para salvar seu filho.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/v8.jpg" alt="The Last Dance">
+        <div class="overlay-text">Documentário sobre a dinastia dos Bulls e Michael Jordan.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/v9.jpg" alt="Venom">
+        <div class="overlay-text">Eddie Brock e Venom enfrentam novos inimigos alienígenas.</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

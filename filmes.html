@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varamount+</title>
+  <link rel="icon" href="IMG/logo.png" type="image/x-icon" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      color: white;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    .navbar img { height: 40px; }
+    .navbar ul { list-style: none; display: flex; gap: 25px; }
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .navbar ul li a:hover { color: #00a8ff; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: url('IMG/parvrum.png') center/cover no-repeat;
+      height: 1080px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 60px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+    }
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+    .hero-content p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    /* ===== SEÇÕES ===== */
+    .section {
+      padding: 40px 20px;
+    }
+    .section h2 {
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+    .movies-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== POSTERS ===== */
+    .poster {
+      width: 200px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .poster:hover {
+      transform: scale(1.08);
+    }
+
+    /* ===== EFEITO DESCRIÇÃO (somente 8 primeiros) ===== */
+    .movie {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .movie img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .movie:hover img {
+      transform: scale(1.08);
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      font-size: 0.9em;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .movie:hover .overlay-text {
+      opacity: 1;
+    }
+        .btn-roxo {
+  display: inline-block;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: 0.3s;
+}
+
+.btn-roxo:hover {
+  background-color: rgb(255, 255, 255);
+  transform: scale(1.05);
+  font: optional;
+  color: #000000;
+}
+  </style>
+</head>
+<body>
+  <header class="navbar"> 
+    <img src="IMG/logo.png" alt="Varamount+">
+    <ul>
+      <li><a href="catalogo.html">Início</a></li>
+      <li><a href="filmes.html">Filmes</a></li>
+      <li><a href="serie.html">Séries</a></li>
+    </ul>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Interstelar</h1>
+      <p>As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie. Cooper é chamado para liderar o grupo e aceita a missão sabendo que pode nunca mais ver os filhos. Ao lado de Brand, Jenkins e Doyle, ele seguirá em busca de um novo lar.</p>
+      <a href="#" class="btn-roxo">Assistir agora</a>
+   
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Populares no Varamount+</h2>
+    <div class="movies-row">
+      <div class="movie">
+        <img src="IMG/shrek.jpg" alt="Shrek">
+        <div class="overlay-text">Shrek é um ogro que vive em um pântano e embarca em uma jornada inesperada.</div>
+
+      </div>
+      <div class="movie">
+        <img src="IMG/sonic.jpg" alt="Sonic">
+        <div class="overlay-text">O ouriço azul mais veloz em aventuras eletrizantes.</div>
+      </div>
+      <div class="movie">
+        <img src="IMG/parque.jpg" alt="Parque dos Sonhos">
+        <div class="overlay-text">A imaginação ganha vida em um parque mágico.</div>
+      </div>
+      <div class="movie">
+        <img src="IMG/bob.jpg" alt="Bob Esponja">
+        <div class="overlay-text">Gary desaparece de repente, mas Bob Esponja e Patrick embarcam em uma missão frenética.</div>
+      </div>
+      <div class="movie">
+        <img src="IMG/download.jpg" alt="Pânico VI">
+        <div class="overlay-text"> o terror retorna em uma nova cidade, com novas vítimas.</div>
+      </div>
+      <div class="movie">
+        <img src="IMG/requeim.jpg" alt="Réquiem para um sonho">
+        <div class="overlay-text" >Uma jornada intensa sobre vício, obsessão e perda de controle.</div>
+      </div>
+      <div class="movie">
+        <img src="IMG/aooa" alt="Clube da Luta">
+        <div class="overlay-text">Um homem comum encontra propósito na violência anárquica.</div>
+      </div>
+      <div class="movie">
+        <img src="IMG/coringa.jpg" alt="Coringa 2">
+        <div class="overlay-text">Uma continuação de caos e loucura retornam em um musical sombrio.</div>
+      </div>
+
+        <div class="movie">
+      <img src="IMG/resgate.jpg" alt="Resgate 2" class="poster">
+              <div class="overlay-text">Depois de escapar da morte por um triz, o mercenário Tyler Rake encara mais uma missão perigosa: resgatar a família de um criminoso implacável.
+              </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Filmes em alta</h2>
+    <div class="movies-row">
+
+      <div class="movie">
+      <img src="IMG/ultimato.jpg" alt="Vingadores Ultimato" class="poster">
+      <div class="overlay-text">Após Thanos eliminar metade das criaturas vivas, os Vingadores têm de lidar com a perda de amigos e entes queridos. Com Tony Stark vagando perdido no espaço sem água e comida, Steve Rogers e Natasha Romanov lideram a resistência contra o titã louco.
+</div>
+      </div>
+
+
+      <div class="movie">
+      <img src="IMG/matrix.jpg" alt="Matrix" class="poster">
+      <div class="overlay-text">Matrix franquia de ficção científica das irmãs Wachowsk</div>
+      </div>
+      
+      <div class="movie">
+      <img src="IMG/pulpfiction.jpg" alt="Pulp Fiction" class="poster">
+      <div class="overlay-text">Pulp Fiction narra três histórias diferentes, todavia entrelaçadas, sobre dois assassinos profissionais, o gângster que os chefia e sua esposa</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/top.jpg" alt="Top Gun" class="poster">
+      <div class="overlay-text">Top Gun, o Capitão da Marinha dos Estados Unidos, Pete "Maverick" Mitchell, se tornou um ousado piloto de testes.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/morte.jpg" alt="Até a Morte" class="poster">
+      <div class="overlay-text">É um filme sobre perdão! Muitos adoecem e até morrem por falta de perdão de si mesmo ou do peso de não ser perdoado. O enredo do filme mostra isto com a perspectiva da arte e do suspense.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/imstillhere.jpg" alt="Eu ainda estou aqui" class="poster">
+      <div class="overlay-text">conta a história real de Eunice Paiva, mãe de cinco filhos, que se tornou líder da família após o sequestro e morte do seu marido, o ex-deputado Rubens Paiva, pela ditadura militar brasileira em 1971</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/gft.jpg" alt="Poderoso chefão" class="poster">
+      <div class="overlay-text"> Quando a saúde do patriarca começa a se deteriorar, a família precisa se reorganizar para manter o poder e derrubar seus inimigos.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/tons.jpg" alt="50 tons" class="poster">
+      <div class="overlay-text">Christian Grey e sua nova esposa, Anastasia, abraçam completamente sua inseparável ligação, mas eventos terríveis começam a compromoter seu final feliz antes mesmo de começar.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/avatar[.jpg" alt="Avatar" class="poster">
+      <div class="overlay-text"> ensina lições cruciais sobre preservação ambiental, mostrando os perigos da exploração descontrolada de recursos e a importância da harmonia com a natureza</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Animação</h2>
+
+
+    <div class="movies-row">
+       <div class="movie">
+      <img src="IMG/shrek.jpg" alt="Shrek" class="poster">
+      <div class="overlay-text">Shrek é um ogro que vive em um pântano e embarca em uma jornada inesperada. </div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/sonic.jpg" alt="Sonic" class="poster">
+      <div class="overlay-text">O porco-espinho Sonic é teletransportado para a Terra. Após causar uma pane elétrica em parte dos Estados Unidos, ele precisa escapar do maligno cientista Dr. Robotnik. </div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/parque.jpg" alt="Parque dos Sonhos" class="poster">
+      <div class="overlay-text">A jovem otimista e sonhadora June encontra escondido na floresta um parque de diversões chamado Wonderland, que é cheio de passeios e animais que falam. </div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/bob.jpg" alt="Bob Esponja" class="poster">
+      <div class="overlay-text">Bob Esponja é uma esponja amigável e otimista que mora na Fenda do Biquíni, trabalhando como cozinheiro no Siri Cascudo e tendo como melhor amigo Patrick Estrela. </div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/Halo.jpg" alt="Halo" class="poster">
+      <div class="overlay-text"> , centrada em um conflito no século XXVI entre a humanidade e uma aliança alienígena chamada Covenant, com o supersoldado Master Chief liderando a luta. </div>
+      </div>
+
+
+      <div class="movie">
+      <img src="IMG/southparktítulo.jpg" alt="South Park" class="poster">
+      <div class="overlay-text"> série animada adulta que acompanha as aventuras e desventuras de quatro garotos — Stan, Kyle, Kenny e Cartman — na cidade de South Park, Colorado </div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/elio.jpg" alt="Elio" class="poster">
+      <div class="overlay-text">"Elio" é um filme de animação da Disney e Pixar sobre um garoto criativo e solitário chamado Elio que, acidentalmente, é transportado para o Comuniverso, uma organização interplanetária </div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/marrio.jpg" alt="Mario" class="poster">
+      <div class="overlay-text">Mario e seu irmão Luigi são encanadores do Brooklyn, em Nova York. Um dia, eles vão parar no reino dos cogumelos, governado pela Princesa Peach. </div>
+      </div>
+
+
+      <div class="movie">
+      <img src="IMG/gabrielhenrique.jpg" alt="O bicho" class="poster">
+      <div class="overlay-text">Boog, um urso-pardo de 400 quilos e constante divertimento dos turistas, vive com a guarda florestal Beth em sua garagem.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Terror</h2>
+    <div class="movies-row">
+      <div class="movie">
+      <img src="IMG/h1.jpg" alt="O silencio dos inocentes" class="poster">
+      <div class="overlay-text">Starling, precisa da ajuda do brilhante e perigoso canibal, Dr. Hannibal Lecter, para capturar um assassino em série, o "Buffalo Bill", que arranca a pele das suas vítimas.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/h2.jpg" alt="Terrifer 2" class="poster">
+      <div class="overlay-text">Depois de ser ressuscitado por uma entidade maligna, o palhaço Art está de volta ao condado de Miles. Agora, ele tenta caçar uma adolescente e seu irmão mais novo durante o Halloween.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/h3.jpg" alt="Donnie Darko" class="poster">
+      <div class="overlay-text">Donnie é um jovem excêntrico que despreza a grande maioria de seus colegas de escola. Ele tem visões, em especial de Frank, um coelho gigante que só ele consegue ver e que o encoraja a fazer brincadeiras humilhantes com quem o cerca.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/h4.jpg" alt="Pecadores" class="poster">
+      <div class="overlay-text">onta a história de dois irmãos gêmeos que voltam ao Mississippi dos anos 30 para abrir um clube de blues dedicado à comunidade afro-americana, mas são confrontados por uma força vampírica sobrenatural</div>
+      </div>
+
+
+      <div class="movie">
+      <img src="IMG/h5.jpg" alt="Freddy Vs Jason" class="poster">
+      <div class="overlay-text">Freddy e Jason atinge estão no inferno, mas Freddy manipula Jason para continuar o seu massacre de adolescentes na Elm Street. No entanto, Jason percebe que está sendo usado e decide ter um confronto final.</div>
+      </div>
+      
+      <div class="movie">
+      <img src="IMG/h6.jpg" alt="Invocação do mal 4" class="poster">
+      <div class="overlay-text">Os investigadores paranormais Ed e Lorraine Warren tentam banir um demônio da casa de uma família.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/h7.jpg" alt="O segredo da cabana" class="poster">
+      <div class="overlay-text">Cinco amigos vão passar um feriado em uma cabana nas montanhas. Lá descobrem um diário antigo no porão, que começam a ler. Aos poucos eles acreditam estar cercados pelo sobrenatural, mas em breve vão entender que há muito mais acontecendo.</div>
+      </div>
+
+      <div class="movie">
+      <img src="IMG/h8.jpg" alt="Smile" class="poster">
+      <div class="overlay-text">Após um paciente cometer um suicídio brutal em sua frente, a psiquiatra Rose é perseguida por uma entidade maligna que muda de forma. Enquanto tenta escapar desse pesadelo, Rose também precisa enfrentar seu passado conturbado para sobreviver.</div>
+      </div>
+
+
+      <div class="movie">
+      <img src="IMG/h9.jpg" alt="Sexta feira 13" class="poster">
+      <div class="overlay-text">A história de um antigo homicídio em Crystal Lake não impede que alguns jovens montem um acampamento de verão no bosque.</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de Grid</title>
+    <style>
+        /*Aplica à página inteira*/
+        body{
+            margin: 0; /*Remove margens padrão*/
+            padding: 0; /*Remove espaçamento padrão*/
+
+            height: 100vh; /*vh = altura total da tela (viewport height)*/
+            width: 100vw; /*vw = largura total de tela (viewport widht)*/
+
+            background-image: url('vxx.png'); /*Caminho da imagem*/
+            background-size: cover; /*Faz a imagem cobrir a tela toda*/
+            background-position: center; /*Centraliza a imagem*/
+            background-repeat: no-repeat; /*Evita que a imagem se repita*/
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /*Estilo para o conteiner do grid*/
+        .container{
+            display: grid; /*Define que o elemento será um grid*/
+            grid-template-columns: repeat(3, 1fr); /*Define 3 colunas de tamanho igual*/
+            gap: 10px; /*Espaçamento entre os itens do grid*/
+            padding: 20px; /*Espaçamento interno do conteiner*/
+        }
+        /*Estilo para os itens dentro do grid*/
+        .item{
+            background-color: #686868; /*Cor de fundo com transparência*/
+            color: rgb(98, 210, 255);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+</body>
+</html>

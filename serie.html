@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varamount+</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #000000;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    .navbar img { height: 40px; }
+    .navbar ul { list-style: none; display: flex; gap: 25px; }
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .navbar ul li a:hover { color: #00a8ff; }
+
+    .hero {
+      background: url('IMG/teste2.jpg') center/cover no-repeat;
+      height: 1080px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 60px;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+    }
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+    .hero-content p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+    .hero-content button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .btn-play { background: #ff00f2; color: white; }
+    .btn-info { background: rgba(0, 0, 255, 0.7); color: white; }
+
+    /* ===== SEÇÕES ===== */
+    .section {
+      padding: 40px 20px;
+    }
+    .section h2 {
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+    .movies-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      overflow-y: hidden;
+    }
+
+    .poster {
+      width: 200px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .poster:hover {
+      transform: scale(1.08);
+    }
+
+    /* ===== EFEITO DE SOBREPOSIÇÃO ===== */
+    .movie {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .movie img {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .movie:hover img {
+      transform: scale(1.08);
+    }
+
+    .overlay-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.75);
+      color: white;
+      padding: 10px;
+      font-size: 0.9em;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .movie:hover .overlay-text {
+      opacity: 1;
+    }
+    .btn-roxo {
+  display: inline-block;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: 0.3s;
+}
+
+.btn-roxo:hover {
+  background-color: rgb(255, 255, 255);
+  transform: scale(1.05);
+  font: optional;
+  color: #000000;
+}
+  </style>
+</head>
+<body>
+  <header class="navbar"> 
+    <img src="IMG/logo.png" alt="Varamount+">
+    <ul>
+      <li><a href="catalogo.html">Início</a></li>
+      <li><a href="filmes.html">Filmes</a></li>
+      <li><a href="serie.html">Séries</a></li>
+    </ul>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Prison break</h1>
+      <p>Um engenheiro que planeja ser preso para salvar o irmão da pena de morte. As tatuagens escondem o plano detalhado de fuga e revelam uma grande conspiração.</p>
+      <a href="#" class="btn-roxo">Assistir agora</a>
+
+    </div>
+  </section>
+
+  
+  </section>
+
+  <section class="section">
+    <h2>Populares no Varamount+</h2>
+    <div class="movies-row">
+
+      <div class="movie">
+        <img src="IMG/rick.jpg" alt="Rick And morty">
+        <div class="overlay-text">Rick e Morty: aventuras interdimensionais com humor ácido.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/flash.jpg" alt="Flash">
+        <div class="overlay-text">Flash: o homem mais rápido do mundo enfrenta paradoxos temporais.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/falls.jpg" alt="Gravity Falls">
+        <div class="overlay-text">Gravity Falls: mistérios e criaturas bizarras em uma cidade estranha.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/bob.jpg" alt="Bob Esponja">
+        <div class="overlay-text">Bob Esponja: diversão e confusão nas aventuras do fundo do mar.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/chucky.jpg" alt="Chucky"> 
+        <div class="overlay-text">Chucky: o boneco assassino está de volta para mais terror.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/southparktítulo.jpg" alt="South Park">
+        <div class="overlay-text">South Park: humor satírico e politicamente incorreto.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/icarlotítulo.jpg" alt="iCarly">
+        <div class="overlay-text">iCarly: uma garota e seus amigos comandam um programa na internet.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/verde.jpg" alt="Arrow">
+        <div class="overlay-text">Arrow: o justiceiro arqueiro enfrenta o crime em Star City.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/MV5harry.jpg" alt="Henry Danger" class="poster">
+        <div class="overlay-text">Henry Hart, de 13 anos, consegue um emprego de meio período como Kid Danger, ajudante do super-herói Capitão Man. As vantagens são fantásticas, mas o garoto precisa manter o show em segredo de seus melhores amigos e da irmã mais nova.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Séries em alta</h2>
+    <div class="movies-row">
+
+      <div class="movie">
+        <img src="IMG/sopranos.jpg" alt="Sopranos">
+        <div class="overlay-text">Tony Soprano tenta equilibrar a vida de mafioso e pai de família.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/julius.jpg" alt="Todo Mundo Odeia o Chris">
+        <div class="overlay-text">Chris enfrenta os desafios da adolescência com muito humor.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/bre.jpg" alt="Prison break">
+        <div class="overlay-text">Michael Scofield elabora um plano para salvar o irmão da morte.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/oruso.jpg" alt="O Urso">
+        <div class="overlay-text">Um chef luta para manter o restaurante da família em Chicago.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/morte.jpg" alt="Até a Morte">
+        <div class="overlay-text">Uma mulher acorda algemada ao marido morto e precisa sobreviver.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/simpsons.webp" alt="Simpsons">
+        <div class="overlay-text">A icônica sátira americana sobre a família Simpson.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/last.jpg" alt="The Last of Us">
+        <div class="overlay-text">Joel e Ellie enfrentam um mundo destruído por um fungo mortal.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/tedlasso.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Um técnico americano lidera um time de futebol inglês.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/la.jpg" alt="La casa de papel">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>TOP 10</h2>
+    <div class="movies-row">
+
+      <div class="movie">
+        <img src="IMG/stra.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Na década de 80, um grupo de amigos se envolve em uma série de eventos sobrenaturais na pacata cidade de Hawkins.Enfrentam criaturas monstruosas, agências secretas e se aventuram em dimensões paralelas.</div>
+      </div>
+        
+      <div class="movie">
+        <img src="IMG/chaves.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Acompanhe o dia a dia de Chaves, um menino pobre que passa sua infância em uma pequena vila ao lado de seus amigos, Chiquinha e Quico. Ele cria complicações para os adultos Seu Madruga, Seu Barriga, Professor Girafales, Dona Florinda e a Bruxa do 71.</div>
+      </div>
+
+        <div class="movie">
+        <img src="IMG/simpsons.webp" alt="Ted Lasso">
+        <div class="overlay-text">Esta comédia animada de enorme sucesso gira em torno da família de mesmo nome que mora na cidade de Springfield, em um estado americano sem nome.</div>
+      </div>
+
+        <div class="movie">
+        <img src="IMG/tedlasso.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Ted Lasso é uma série de televisão de comédia estadunidense desenvolvida por Bill Lawrence, Jason Sudeikis, Joe Kelly e Brendan Hunt, baseada em um personagem de mesmo nome que Sudeikis</div>
+      </div>
+      
+      <div class="movie">
+        <img src="IMG/bad.webp" alt="Ted Lasso">
+        <div class="overlay-text">Walter White é um modesto professor de química do ensino médio. Quando descobre que tem câncer terminal.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/barraco.png" alt="Ted Lasso">
+        <div class="overlay-text">A funkeira Kellen é cancelada por causa de um vídeo onde ela é vista destratando seus fãs. Reflexiva e no fundo do poço, ela decide voltar às suas origens e conta com o apoio de sua família para dar a volta por cima.</div>
+      </div>
+
+        <div class="movie">
+        <img src="IMG/banks.jpg" alt="Ted Lasso">
+        <div class="overlay-text">O jovem John convoca seus melhores amigos para procurarem por um tesouro ligado ao desaparecimento de seu pai. Aos poucos, o grupo vai entrando em uma perigosa trama de segredos e perigos.</div>
+      </div>
+
+           <div class="movie">
+        <img src="IMG/CARROSEL.jpg" alt="Ted Lasso">
+        <div class="overlay-text">A telenovela infantil Carrossel, baseada na telenovela mexicana "Carrussel", foi produzida pelo SBT e escrita por Íris Abravanel. No início, dirigida por Del Rangel e mais tarde substituído por Reynaldo Boury.</div>    
+         </div>
+
+          <div class="movie">
+        <img src="IMG/FRIENDS.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Rachel, Monica, Phoebe, Joey, Chandler e Ross são seis amigos que vivem em Nova York. Eles encaram problemas cotidianos e encontros e desencontros amorosos com bom humor. Nas horas vagas, adoram frequentar a cafeteria "Central Perk".</div>
+      </div>
+
+           <div class="movie">
+          <img src="IMG/dexter.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Dexter Morgan acorda do coma e parte para Nova York para encontrar Harrison.</div>
+      </div>
+
+       <div class="movie">
+          <img src="IMG/wadinha.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Inteligente, sarcástica e apática, Wandinha Addams pode estar meio morta por dentro, mas na Escola Nunca Mais ela vai fazer amigos, inimigos e investigar assassinatos.</div>
+      </div>
+
+      
+           <div class="movie">
+          <img src="IMG/RE.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Manuela e Isabela, irmãs gêmeas, foram separadas após o nascimento e se reencontram somente após 12 anos. Elas decidem trocar de lugar, mas o plano não funciona tão bem quando uma competição musical começa e as duas tentam manter a farsa.</div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Para assistir com a familia</h2>
+    <div class="movies-row">
+
+      <div class="movie">
+        <img src="IMG/stra.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Na década de 80, um grupo de amigos se envolve em uma série de eventos sobrenaturais na pacata cidade de Hawkins.Enfrentam criaturas monstruosas, agências secretas e se aventuram em dimensões paralelas.</div>
+      </div> 
+
+       <div class="movie">
+        <img src="IMG/chaves.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Acompanhe o dia a dia de Chaves, um menino pobre que passa sua infância em uma pequena vila ao lado de seus amigos, Chiquinha e Quico. Ele cria complicações para os adultos Seu Madruga, Seu Barriga, Professor Girafales, Dona Florinda e a Bruxa do 71.</div>
+      </div>
+
+       <div class="movie">
+        <img src="IMG/simpsons.webp" alt="Ted Lasso">
+        <div class="overlay-text">Esta comédia animada de enorme sucesso gira em torno da família de mesmo nome que mora na cidade de Springfield, em um estado americano sem nome.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/bob.jpg" alt="Bob Esponja">
+        <div class="overlay-text">Bob Esponja: diversão e confusão nas aventuras do fundo do mar.</div>
+      </div>
+
+      <div class="movie">
+          <img src="IMG/wadinha.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Inteligente, sarcástica e apática, Wandinha Addams pode estar meio morta por dentro, mas na Escola Nunca Mais ela vai fazer amigos, inimigos e investigar assassinatos.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/icarlotítulo.jpg" alt="iCarly">
+        <div class="overlay-text">iCarly: uma garota e seus amigos comandam um programa na internet.</div>
+      </div>
+
+      <div class="movie">
+        <img src="IMG/CARROSEL.jpg" alt="Ted Lasso">
+        <div class="overlay-text">A telenovela infantil Carrossel, baseada na telenovela mexicana "Carrussel", foi produzida pelo SBT e escrita por Íris Abravanel. No início, dirigida por Del Rangel e mais tarde substituído por Reynaldo Boury.</div>    
+         </div>
+
+               <div class="movie">
+          <img src="IMG/RE.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Manuela e Isabela, irmãs gêmeas, foram separadas após o nascimento e se reencontram somente após 12 anos. Elas decidem trocar de lugar, mas o plano não funciona tão bem quando uma competição musical começa e as duas tentam manter a farsa.</div>
+      </div>
+
+       <div class="movie">
+        <img src="IMG/FRIENDS.jpg" alt="Ted Lasso">
+        <div class="overlay-text">Rachel, Monica, Phoebe, Joey, Chandler e Ross são seis amigos que vivem em Nova York. Eles encaram problemas cotidianos e encontros e desencontros amorosos com bom humor. Nas horas vagas, adoram frequentar a cafeteria "Central Perk".</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
